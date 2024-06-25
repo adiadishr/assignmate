@@ -1,0 +1,34 @@
+.landing-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img{
+    width: max-content;
+    height: 200px;
+    margin-bottom: 50px;
+  }
+  span{
+    color: var(--primary);
+  }
+  .btn-holder {
+    display: flex;
+    padding: 10px 0 0 0;
+    gap: 10px;
+    a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+  }
+  .btn {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  .btn:hover {
+    background-color: var(--primary);
+    color: white;
+    transition-duration: 300ms;
+  }
+}
