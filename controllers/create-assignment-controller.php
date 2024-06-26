@@ -1,13 +1,20 @@
 <?php
 include '../config.php';
 
+function sanitize($input)
+{
+    $input = strip_tags($input);
+    $input = htmlspecialchars($input);
+    return $input;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $subject_id = $_POST['subject_id'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $assigned_date = $_POST['assigned_date'];
-    $due_date = $_POST['due_date'];
-    $user_id = $_SESSION['user_id'];
+    $subject_id = sanitize($_POST['subject_id']);
+    $title = sanitize($_POST['title']);
+    $description = sanitize($_POST['description']);
+    $assigned_date = sanitize($_POST['assigned_date']);
+    $due_date = sanitize($_POST['due_date']);
+    $user_id = sanitize($_SESSION['user_id']);
 
     if (empty($subject_id) || empty($title) || empty($description) || empty($assigned_date) || empty($due_date)) {
         $_SESSION['error'] = "Please fill in all fields.";
@@ -20,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $due_year = date("Y", strtotime($due_date));
 
     if ($assigned_year > $current_year || $due_year > $current_year || $assigned_year < $current_year || $due_year < $current_year) {
-        $_SESSION['error'] = "Invalid date.";
+        $_SESSION['error'] = "Invalid date, the year must be current.";
         header("Location: ../view/pages/create-assignment/create-assignment.php");
         exit();
     }

@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
 
 <body>
     <?php include '../../includes/message.php'; ?>
-    <div class="view-subjects-container">
+    <div class="container">
         <div class='top-bar'>
             <a class="brand" href="../dashboard/dashboard.php">
                 <img src="../../../public/assets/logo.png" alt="Assignmate Logo">

@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
 
 <body>
     <?php include '../../includes/message.php'; ?>
-    <div class="dashboard-container">
+    <div class="container">
         <div class='top-bar'>
             <a class="brand" href="./dashboard.php">
                 <img src="../../../public/assets/logo.png" alt="Assignmate Logo">
@@ -45,25 +45,12 @@ $result = mysqli_query($conn, $sql);
             <a href="../view-subjects/view-subjects.php" class="control">Subjects
                 <i class="fa-solid fa-chalkboard-user"></i>
             </a>
-            <a href="../../../controllers/page-not-found-controller.php" class="control">Study Materials
-                <i class="fa-solid fa-book-open"></i>
-            </a>
-            <a href="../../../controllers/page-not-found-controller.php" class="control">Events
-                <i class="fa-regular fa-calendar-alt"></i>
-            </a>
-            <a href="../../../controllers/page-not-found-controller.php" class="control">Schedule
-                <i class="fa-regular fa-clock"></i>
-            </a>
-            <a href="../../../controllers/page-not-found-controller.php" class="control">Statistics
-                <i class="fa-solid fa-chart-simple"></i>
-            </a>
             <a href="../view-edit-profile/profile.php" class="control">Profile
                 <i class="fa-regular fa-user"></i>
             </a>
-            <div class='pending'>
-                <div>Pending Assignments</div>
-                <h5>14</h5>
-            </div>
+            <!-- <a href="../../../controllers/page-not-found-controller.php" class="control">Statistics
+                <i class="fa-solid fa-chart-simple"></i>
+            </a> -->
         </div>
         <div id="logout-modal" class="modal">
             <div class="modal-content">

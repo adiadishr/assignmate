@@ -28,24 +28,26 @@ CREATE TABLE assignments (
     due_date DATE NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    status ENUM('not_started', 'in_progress', 'completed') DEFAULT 'not_started' NOT NULL,
+    status ENUM('Not Started', 'In Progress', 'Completed') DEFAULT 'Not Started' NOT NULL,
     FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 drop table assignments;
 
+delete from assignments where id = 11;
+
 SELECT * FROM assignments;
 SELECT * FROM users;
 SELECT * FROM subjects;
 
-delete from assignments where id =1;
+delete from assignments where id =7;
 
 CREATE TABLE tasks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     assignment_id INT,
     title VARCHAR(255),
     description TEXT,
-    status ENUM('not_started', 'in_progress', 'completed'),
+    status ENUM('Not Started', 'In Progress', 'Completed'),
     FOREIGN KEY (assignment_id) REFERENCES assignments(id)
 );

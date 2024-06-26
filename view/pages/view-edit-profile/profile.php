@@ -26,7 +26,7 @@ $user = mysqli_fetch_assoc($result);
 
 <body>
     <?php include '../../includes/message.php'; ?>
-    <div class="profile-container">
+    <div class="container">
         <div class='top-bar'>
             <a class="brand" href="./dashboard.php">
                 <img src="../../../public/assets/logo.png" alt="Assignmate Logo">

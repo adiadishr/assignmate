@@ -22,6 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die;
     }
 
+    $phone_no_check_query = "SELECT id FROM users WHERE phone_no='$phone_no' LIMIT 1";
+    $result = mysqli_query($conn, $phone_no_check_query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $_SESSION['error'] = "Phone number already registered";
+        header("Location: ../view/pages/register/register.php");
+        die;
+    }
+
     $email_check_query = "SELECT id FROM users WHERE email='$email' LIMIT 1";
     $result = mysqli_query($conn, $email_check_query);
 

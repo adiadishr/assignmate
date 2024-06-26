@@ -8,18 +8,21 @@
   // --primary-light: #61d788;
   // --primary-dark: #033613;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 #message-container {
   position: fixed;
-  top: 25px;
-  right: 25px;
-  z-index: 50;
+  top: 20px;
+  right: 20px;
+  z-index: 75;
   transition: all 500ms;
+
   h3 {
     margin-bottom: 25px;
     padding: 1.75rem 30px;
@@ -29,6 +32,7 @@
     justify-content: space-between;
     align-items: center;
     transition: all 500ms;
+
     i {
       margin-left: 10px;
       border: 1px solid white;
@@ -41,49 +45,78 @@
       transition: all 300ms;
     }
   }
+
   .error {
     background: linear-gradient(to right, #870000, #890606);
+
     i:hover {
       background-color: white;
       color: #890606;
     }
   }
+
   .success {
     background-image: linear-gradient(120deg, #7ea919 0%, #46ba55 100%);
+
     i:hover {
       background-color: white;
       color: #46ba55;
     }
   }
 }
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.5% 2rem 2.5%;
+  gap: 2.5rem;
+}
+
 .top-bar {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  border-bottom: #80808025 1px solid;
+  padding: 1rem 0;
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  background: white;
+
   .brand {
     text-decoration: none;
     color: black;
     transition: all 300ms;
     display: flex;
     align-items: center;
-    justify-content: center;
+    width: max-content;
+
     img {
       width: 100%;
       height: 60px;
       margin-right: 20px;
     }
+
     span {
       color: var(--primary);
     }
-    &:hover {
-      text-decoration: underline;
-      transform: translateY(-2.5px);
+
+    h1 {
+      @media (min-width: 768px) {
+        display: flex;
+      }
+
+      display: none;
     }
   }
+
   nav {
     gap: 15px;
     display: flex;
+
     a {
       display: flex;
       background: transparent;
@@ -94,6 +127,7 @@
       color: black;
       align-items: center;
       justify-content: center;
+
       &:hover {
         background-color: rgb(25, 114, 192);
         color: white;
@@ -101,31 +135,35 @@
     }
   }
 }
+
 .top-bar-login-register {
-  padding: 2rem 2.5%;
+  padding: 1rem 2.5% 1rem 2.5%;
 }
+
 .modal {
-  display: none; /* Use flexbox to center the modal */
+  display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 
   .modal-content {
     background-color: #fff;
-    margin: auto; /* Center the modal content */
+    margin: auto;
+    /* Center the modal content */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 400px;
     text-align: center;
-    position: relative; /* Ensure it's relative for child positioning */
+    position: relative;
+    /* Ensure it's relative for child positioning */
   }
 
   .close-btn {
@@ -133,6 +171,7 @@
     float: right;
     font-size: 28px;
     font-weight: bold;
+
     &:hover,
     &:focus {
       color: black;

@@ -6,28 +6,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   h1 {
     color: var(--primary);
   }
+
   form {
     display: flex;
     flex-direction: column;
     width: 25%;
     gap: 10px;
     margin: 25px 0;
+
     input {
       padding: 10px;
       border: 1px solid black;
       width: 100%;
       margin-bottom: 10px;
+
       &:focus {
         outline: none;
         border: 1px var(--primary) solid;
         transition: all 300ms;
       }
     }
+
     .submit {
       transition-duration: 300ms;
+
       &:hover {
         background-color: var(--primary);
         color: white;
