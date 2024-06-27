@@ -31,6 +31,9 @@ $result = mysqli_query($conn, $sql);
                 <h1>Assign<span>Mate</span></h1>
             </a>
             <nav>
+                <a href="../create-assignment/create-assignment.php">
+                    <pre><i class="fa-solid fa-plus"></i>  Create Assignment</pre>
+                </a>
                 <a href="#" id="logout-btn">Logout</a>
             </nav>
         </div>
@@ -48,9 +51,9 @@ $result = mysqli_query($conn, $sql);
             <a href="../view-edit-profile/profile.php" class="control">Profile
                 <i class="fa-regular fa-user"></i>
             </a>
-            <!-- <a href="../../../controllers/page-not-found-controller.php" class="control">Statistics
+            <a href="../../../controllers/page-not-found-controller.php" class="control">Statistics
                 <i class="fa-solid fa-chart-simple"></i>
-            </a> -->
+            </a>
         </div>
         <div id="logout-modal" class="modal">
             <div class="modal-content">
